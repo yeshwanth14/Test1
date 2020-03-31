@@ -10,7 +10,7 @@ node {
 	  jdk 'JAVA8'
       environment {
 
-      sonar_url = 'http://172.31.24.93:9000'
+      sonar_url = 'http://localhost:9000'
       sonar_username = 'admin'
       sonar_password = 'admin'
 }
@@ -23,7 +23,7 @@ node {
           
     stage("publish artifactory") {
         
-    nexusArtifactUploader artifacts: [[artifactId: 'gameoflife', classifier: '', file: '/var/lib/jenkins/workspace/test-pipeline1/gameoflife-build/target/gameoflife-build-1.0-SNAPSHOT.jar', type: 'jar']], credentialsId: 'cf437001-0947-42a3-884a-7035432cdc04', groupId: 'com.wakaleo.gameoflife', nexusUrl: '172.31.24.93:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'yeshwanth', version: '4.0.0'
+    nexusArtifactUploader artifacts: [[artifactId: 'gameoflife', classifier: '', file: '/var/lib/jenkins/workspace/test-pipeline1/gameoflife-build/target/gameoflife-build-1.0-SNAPSHOT.jar', type: 'jar']], credentialsId: 'cf437001-0947-42a3-884a-7035432cdc04', groupId: 'com.wakaleo.gameoflife', nexusUrl: 'localhost:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'yeshwanth', version: '4.0.0'
     }
         
         
