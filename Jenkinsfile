@@ -1,6 +1,6 @@
 node {
    def mvnHome
-   stage('Preparation') { // for display purposes
+   stage('Git clone') { // for display purposes
       // Get some code from a GitHub repository
       git 'https://github.com/wakaleo/game-of-life.git'
       // Get the Maven tool.
